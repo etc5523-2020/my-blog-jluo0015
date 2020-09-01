@@ -1,0 +1,25 @@
+---
+title: COVID-19 situations of Japan
+author: Jinhao Luo
+date: "`r Sys.Date()`"
+slug: etc5523-blog-1
+categories: []
+tags: []
+subtitle: Exploring the situation of COVID-19 in Japan
+summary: This post will explore the situation of COVID-19 in Japan
+authors: []
+lastmod: "`r Sys.time()`"
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+# Introduction
+
+Although Japan has dense and aging population, it still reported a low cases of COVID-19 infection in the first few months of the COVID-19 outbreak, compared with other countries (akiko). However, according to the latest [COVID-19 report](https://www.mhlw.go.jp/content/10900000/000666371.pdf) from Ministry of Health, Labour and Welfare of Japan, Japan has experience the second outbreak of COVID-19 from July, 2020. And it is more serious than the first one. Therefore, this post will focus on the COVID-19 cases of Japan. 
+
+# Data description
+

@@ -5,7 +5,7 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Jinhao Luo</copyright><lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Jinhao Luo</copyright><lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
@@ -14,13 +14,19 @@
     
     <item>
       <title>COVID-19 situations of Japan</title>
-      <link>/post/etc5523-blog-1/</link>
-      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>/post/etc5523-blog-1/</guid>
+      <link>/post/covid_19_japan/etc5523-blog-1/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/post/covid_19_japan/etc5523-blog-1/</guid>
       <description>
 
 
-
+&lt;div id=&#34;introduction&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Although Japan has dense and aging population, it still reported a low cases of COVID-19 infection in the first few months of the COVID-19 outbreak, compared with other countries (akiko). However, according to the latest &lt;a href=&#34;https://www.mhlw.go.jp/content/10900000/000666371.pdf&#34;&gt;COVID-19 report&lt;/a&gt; from Ministry of Health, Labour and Welfare of Japan, Japan has experience the second outbreak of COVID-19 from July, 2020. And it is more serious than the first one. Therefore, this post will focus on the COVID-19 cases of Japan.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-description&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Data description&lt;/h1&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -53,7 +59,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-817543296&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-517493682&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -63,7 +69,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-817543296&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-517493682&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -495,6 +501,14 @@ date: 2019-09-01
 &lt;p&gt;Released under the 
 &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/post/covid_19_japan/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/post/covid_19_japan/readme/</guid>
+      <description></description>
     </item>
     
   </channel>
