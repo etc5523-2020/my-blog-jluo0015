@@ -8,15 +8,21 @@ tags: []
 subtitle: Exploring the situation of COVID-19 in Japan
 summary: This post will explore the situation of COVID-19 in Japan
 authors: []
-lastmod: "2020-09-02 00:04:34"
+lastmod: "2020-09-02 23:48:19"
 featured: no
 image:
   caption: ''
   focal_point: ''
   preview_only: no
 projects: []
+bibliography: references.bib
+biblio-style: apa
+output: 
+  bookdown::html_document2:
+    citation_package: biblatex
 ---
 
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
 
 
 <div id="introduction" class="section level1">
@@ -25,4 +31,105 @@ projects: []
 </div>
 <div id="data-description" class="section level1">
 <h1>Data description</h1>
+<p>For exploring the CPVID-19 situations of Japan, the post has used the COVID-19 data from the package called <strong>coronavirus</strong>. This package is from Github repository owned by Rami Krispin, which could find all information related to this package from <a href="https://github.com/RamiKrispin/coronavirus">Github</a>. By glimpsing this data, there are 175055 observations and 7 variables. Based on the help page of coronavirus package, <span class="citation">Krispin and Byrnes (2020)</span> indicate the variables are:</p>
+<table class="table table-hover table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Class
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+date
+</td>
+<td style="text-align:left;">
+Date
+</td>
+<td style="text-align:left;">
+The format of date is YYYY-MM-DD
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+province
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Name of province or state, if provided
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+country
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Name of country or region
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lat
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Latitude of center of geographic region
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+long
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Longitude of center of geographic region
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+type
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Type of cases (confirmed, death, recovered)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cases
+</td>
+<td style="text-align:left;">
+integer
+</td>
+<td style="text-align:left;">
+Number of cases on given date
+</td>
+</tr>
+</tbody>
+</table>
+<p>Because this post will focus on the cases of Japan, the <strong>filter</strong> function will be used for filter the data which make the data only include Japan’s cases. Besides, because the types of COVID-19 case are all contained in the same column, the function call <strong>pivot_wider</strong> will be applied to change the position of type as variable rather than value.</p>
+<div id="refs" class="references">
+<div id="ref-COVID-19">
+<p>Krispin, Rami, and Jarrett Byrnes. 2020. <em>Coronavirus: The 2019 Novel Coronavirus Covid-19 (2019-nCoV) Dataset</em>. <a href="https://github.com/RamiKrispin/coronavirus">https://github.com/RamiKrispin/coronavirus</a>.</p>
+</div>
+</div>
 </div>

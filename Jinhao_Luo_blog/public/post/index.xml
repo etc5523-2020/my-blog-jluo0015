@@ -18,6 +18,7 @@
       <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       <guid>/post/covid_19_japan/etc5523-blog-1/</guid>
       <description>
+&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;div id=&#34;introduction&#34; class=&#34;section level1&#34;&gt;
@@ -26,6 +27,107 @@
 &lt;/div&gt;
 &lt;div id=&#34;data-description&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Data description&lt;/h1&gt;
+&lt;p&gt;For exploring the CPVID-19 situations of Japan, the post has used the COVID-19 data from the package called &lt;strong&gt;coronavirus&lt;/strong&gt;. This package is from Github repository owned by Rami Krispin, which could find all information related to this package from &lt;a href=&#34;https://github.com/RamiKrispin/coronavirus&#34;&gt;Github&lt;/a&gt;. By glimpsing this data, there are 175055 observations and 7 variables. Based on the help page of coronavirus package, &lt;span class=&#34;citation&#34;&gt;Krispin and Byrnes (2020)&lt;/span&gt; indicate the variables are:&lt;/p&gt;
+&lt;table class=&#34;table table-hover table-striped table-condensed&#34; style=&#34;margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Variable
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Class
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Description
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+date
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Date
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+The format of date is YYYY-MM-DD
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+province
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+character
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Name of province or state, if provided
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+country
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+character
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Name of country or region
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+lat
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+numeric
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Latitude of center of geographic region
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+long
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+numeric
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Longitude of center of geographic region
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+type
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+character
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Type of cases (confirmed, death, recovered)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+cases
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+integer
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Number of cases on given date
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Because this post will focus on the cases of Japan, the &lt;strong&gt;filter&lt;/strong&gt; function will be used for filter the data which make the data only include Japan’s cases. Besides, because the types of COVID-19 case are all contained in the same column, the function call &lt;strong&gt;pivot_wider&lt;/strong&gt; will be applied to change the position of type as variable rather than value.&lt;/p&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-COVID-19&#34;&gt;
+&lt;p&gt;Krispin, Rami, and Jarrett Byrnes. 2020. &lt;em&gt;Coronavirus: The 2019 Novel Coronavirus Covid-19 (2019-nCoV) Dataset&lt;/em&gt;. &lt;a href=&#34;https://github.com/RamiKrispin/coronavirus&#34;&gt;https://github.com/RamiKrispin/coronavirus&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -59,7 +161,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-517493682&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-857129364&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -69,7 +171,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-517493682&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-857129364&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -508,7 +610,28 @@ date: 2019-09-01
       <link>/post/covid_19_japan/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/post/covid_19_japan/readme/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;covid-19-situations-of-japan&#34;&gt;COVID-19 situations of Japan&lt;/h1&gt;
+&lt;p&gt;This post is used for exploring the situations of COVID-19 in Japan.&lt;/p&gt;
+&lt;h2 id=&#34;data-source&#34;&gt;Data source&lt;/h2&gt;
+&lt;p&gt;The data come from the coronavirus package in Github of Rami Krispin. You can browse the related information of coronavirus package by this 
+&lt;a href=&#34;https://github.com/RamiKrispin/coronavirus&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You have two ways to download the coronavirus package.&lt;/p&gt;
+&lt;h3 id=&#34;cran-version&#34;&gt;CRAN version&lt;/h3&gt;
+&lt;p&gt;Try the command:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;install.packages(&amp;ldquo;coronavirus&amp;rdquo;)&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;github-version&#34;&gt;Github version&lt;/h3&gt;
+&lt;p&gt;Try the command:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;install.packages(&amp;ldquo;devtools&amp;rdquo;)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;devtools::install_github(&amp;ldquo;RamiKrispin/coronavirus&amp;rdquo;)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;P.S.  You need to install the devtools package first, if you already have this package, please ignore it.&lt;/p&gt;
+&lt;h3 id=&#34;data-refresh&#34;&gt;Data refresh&lt;/h3&gt;
+&lt;p&gt;To refresh the data, please try:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;library(coronavirus)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;update_dataset()&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Or you can use the Covid19R project data standard format to pull the data, please try:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;new_object &amp;lt;- refresh_coronavirus_jhu()&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;P.S. You can rename the new_object&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -30,7 +30,8 @@
   
     
   
-  <meta name="description" content="">
+  <meta name="description" content="COVID-19 situations of Japan This post is used for exploring the situations of COVID-19 in Japan.
+Data source The data come from the coronavirus package in Github of Rami Krispin. You can browse the related information of coronavirus package by this link.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/covid_19_japan/readme/">
@@ -265,7 +266,8 @@
   <meta property="og:site_name" content="Jinhao&#39;s Blog">
   <meta property="og:url" content="/post/covid_19_japan/readme/">
   <meta property="og:title" content=" | Jinhao&#39;s Blog">
-  <meta property="og:description" content=""><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:description" content="COVID-19 situations of Japan This post is used for exploring the situations of COVID-19 in Japan.
+Data source The data come from the coronavirus package in Github of Rami Krispin. You can browse the related information of coronavirus package by this link."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
@@ -313,7 +315,7 @@
       "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": ""
+  "description": "COVID-19 situations of Japan This post is used for exploring the situations of COVID-19 in Japan.\nData source The data come from the coronavirus package in Github of Rami Krispin. You can browse the related information of coronavirus package by this link."
 }
 </script>
 
@@ -729,7 +731,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    0 min read
+    1 min read
   </span>
   
 
@@ -765,7 +767,28 @@
   <div class="article-container">
 
     <div class="article-style">
-      
+      <h1 id="covid-19-situations-of-japan">COVID-19 situations of Japan</h1>
+<p>This post is used for exploring the situations of COVID-19 in Japan.</p>
+<h2 id="data-source">Data source</h2>
+<p>The data come from the coronavirus package in Github of Rami Krispin. You can browse the related information of coronavirus package by this 
+<a href="https://github.com/RamiKrispin/coronavirus" target="_blank" rel="noopener">link</a>.</p>
+<p>You have two ways to download the coronavirus package.</p>
+<h3 id="cran-version">CRAN version</h3>
+<p>Try the command:</p>
+<p><strong>install.packages(&ldquo;coronavirus&rdquo;)</strong></p>
+<h3 id="github-version">Github version</h3>
+<p>Try the command:</p>
+<p><strong>install.packages(&ldquo;devtools&rdquo;)</strong></p>
+<p><strong>devtools::install_github(&ldquo;RamiKrispin/coronavirus&rdquo;)</strong></p>
+<p>P.S.  You need to install the devtools package first, if you already have this package, please ignore it.</p>
+<h3 id="data-refresh">Data refresh</h3>
+<p>To refresh the data, please try:</p>
+<p><strong>library(coronavirus)</strong></p>
+<p><strong>update_dataset()</strong></p>
+<p>Or you can use the Covid19R project data standard format to pull the data, please try:</p>
+<p><strong>new_object &lt;- refresh_coronavirus_jhu()</strong></p>
+<p>P.S. You can rename the new_object</p>
+
     </div>
 
     

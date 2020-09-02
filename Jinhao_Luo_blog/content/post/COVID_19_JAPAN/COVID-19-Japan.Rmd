@@ -15,11 +15,43 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+bibliography: references.bib
+biblio-style: apa
+output: 
+  bookdown::html_document2:
+    citation_package: biblatex
 ---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, cache=FALSE, message=FALSE, warning=FALSE)
+
+library(tidyverse)
+library(coronavirus)
+library(kableExtra)
+library(tibble)
+```
+
 
 # Introduction
 
 Although Japan has dense and aging population, it still reported a low cases of COVID-19 infection in the first few months of the COVID-19 outbreak, compared with other countries (akiko). However, according to the latest [COVID-19 report](https://www.mhlw.go.jp/content/10900000/000666371.pdf) from Ministry of Health, Labour and Welfare of Japan, Japan has experience the second outbreak of COVID-19 from July, 2020. And it is more serious than the first one. Therefore, this post will focus on the COVID-19 cases of Japan. 
 
 # Data description
+
+For exploring the CPVID-19 situations of Japan, the post has used the COVID-19 data from the package called **coronavirus**. This package is from Github repository owned by Rami Krispin, which could find all information related to this package from [Github](https://github.com/RamiKrispin/coronavirus). By glimpsing this data, there are 175055 observations and 7 variables. Based on the help page of coronavirus package, @COVID-19 indicate the variables are: 
+
+```{r variable-table}
+tribble(~Variable, ~Class, ~Description,
+        "date", "Date", "The format of date is YYYY-MM-DD",
+        "province", "character", "Name of province or state, if provided",
+        "country", "character", "Name of country or region",
+        "lat", "numeric", "Latitude of center of geographic region",
+        "long", "numeric", "Longitude of center of geographic region",
+        "type", "character", "Type of cases (confirmed, death, recovered)",
+        "cases", "integer", "Number of cases on given date") %>% 
+  kable() %>% 
+  kable_styling(bootstrap_options = c("hover", "striped", "condensed"))
+```
+
+Because this post will focus on the cases of Japan, the **filter** function will be used for filter the data which make the data only include Japan's cases. Besides, because the types of COVID-19 case are all contained in the same column, the function call **pivot_wider** will be applied to change the position of type as variable rather than value.
 
