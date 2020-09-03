@@ -26,10 +26,22 @@ output:
 knitr::opts_chunk$set(echo = FALSE, cache=FALSE, message=FALSE, warning=FALSE)
 
 library(tidyverse)
-library(coronavirus)
 library(kableExtra)
 library(tibble)
+library(lubridate)
 ```
+
+```{r data}
+# install.package("devtools")
+# devtools::install_github("RamiKrispin/coronavirus")
+
+library(coronavirus)
+data("coronavirus")
+# update_dataset() 
+# You can use this function to update the coronavirus package, but this post will use the version 0.3.0.9000 of package to write the data story.
+```
+
+
 
 
 # Introduction
@@ -50,8 +62,43 @@ tribble(~Variable, ~Class, ~Description,
         "type", "character", "Type of cases (confirmed, death, recovered)",
         "cases", "integer", "Number of cases on given date") %>% 
   kable() %>% 
-  kable_styling(bootstrap_options = c("hover", "striped", "condensed"))
+  kable_styling(bootstrap_options = c("hover", "striped", "condensed"), position = "center")
 ```
 
 Because this post will focus on the cases of Japan, the **filter** function will be used for filter the data which make the data only include Japan's cases. Besides, because the types of COVID-19 case are all contained in the same column, the function call **pivot_wider** will be applied to change the position of type as variable rather than value.
 
+# Data story
+
+```{r summary-table}
+# filter the Japan's cases and change the format of table
+covid_19_japan <- coronavirus %>%
+  filter(country == "Japan") %>% 
+  select(-province, -lat, -long) %>%
+  pivot_wider(names_from = "type", values_from = "cases") %>%
+# Extract the year and month in order to calculate the cases base on month.
+  mutate(year = year(date), month = month(date)) %>% 
+  group_by(year,month) %>%
+# Calculate the cases of each month
+  summarise(confirmed = sum(confirmed),
+            death = sum(death),
+            recovered = sum(recovered)) %>%
+# calculate the cumulative number of cases.
+  ungroup() %>% 
+  mutate(total_confirmed = cumsum(confirmed),
+         total_death = cumsum(death),
+         total_recovered = cumsum(recovered)) %>%
+# Rename the variables' name to make better understanding
+  rename(`monthly confirmed` = "confirmed",
+         `monthly death` = "death",
+         `monthly recovered` = "recovered",
+         `cumulative confirmed` = "total_confirmed",
+         `cumulative death` = "total_death",
+         `cumulative recovered` = "total_recovered") %>% 
+  kable(caption = "Summary table of COVID-19 cases in Japan") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover"), font_size = 16) %>% 
+  column_spec(6:8, bold = T)
+
+covid_19_japan
+```
+
+In order to explore the COVID-19 situations of Japan and identify the second breakout situation, a summary table has been generated to support the following explanation. Table \@ref(tab:summary-table) indicates the monthly cases and cumulative cases of Japan from the first patient has been confirmed to the end of August, 2020. 

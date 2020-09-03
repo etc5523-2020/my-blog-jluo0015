@@ -5,7 +5,7 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Jinhao Luo</copyright><lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Jinhao Luo</copyright><lastBuildDate>Thu, 03 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
@@ -15,7 +15,7 @@
     <item>
       <title>COVID-19 situations of Japan</title>
       <link>/post/covid_19_japan/etc5523-blog-1/</link>
-      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
       <guid>/post/covid_19_japan/etc5523-blog-1/</guid>
       <description>
 &lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
@@ -123,6 +123,9 @@ Number of cases on given date
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;Because this post will focus on the cases of Japan, the &lt;strong&gt;filter&lt;/strong&gt; function will be used for filter the data which make the data only include Japan’s cases. Besides, because the types of COVID-19 case are all contained in the same column, the function call &lt;strong&gt;pivot_wider&lt;/strong&gt; will be applied to change the position of type as variable rather than value.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-story&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;Data story&lt;/h1&gt;
 &lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
 &lt;div id=&#34;ref-COVID-19&#34;&gt;
 &lt;p&gt;Krispin, Rami, and Jarrett Byrnes. 2020. &lt;em&gt;Coronavirus: The 2019 Novel Coronavirus Covid-19 (2019-nCoV) Dataset&lt;/em&gt;. &lt;a href=&#34;https://github.com/RamiKrispin/coronavirus&#34;&gt;https://github.com/RamiKrispin/coronavirus&lt;/a&gt;.&lt;/p&gt;
@@ -161,7 +164,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-857129364&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-417598326&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -171,7 +174,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-857129364&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-417598326&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
