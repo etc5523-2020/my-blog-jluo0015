@@ -93,12 +93,17 @@ covid_19_japan <- coronavirus %>%
          `monthly recovered` = "recovered",
          `cumulative confirmed` = "total_confirmed",
          `cumulative death` = "total_death",
-         `cumulative recovered` = "total_recovered") %>% 
+         `cumulative recovered` = "total_recovered") 
+
+covid_19_japan_table <- covid_19_japan %>% 
   kable(caption = "Summary table of COVID-19 cases in Japan") %>% 
   kable_styling(bootstrap_options = c("striped", "hover"), font_size = 16) %>% 
   column_spec(6:8, bold = T)
 
-covid_19_japan
+covid_19_japan_table
 ```
 
-In order to explore the COVID-19 situations of Japan and identify the second breakout situation, a summary table has been generated to support the following explanation. Table \@ref(tab:summary-table) indicates the monthly cases and cumulative cases of Japan from the first patient has been confirmed to the end of August, 2020. 
+In order to explore the COVID-19 situations of Japan and identify the second outbreak situation, a summary table has been generated to support the following explanation. Table \@ref(tab:summary-table) indicates the monthly cases and cumulative cases of Japan from the first patient has been confirmed to the end of August, 2020. Based on table \@ref(tab:summary-table), there were little cases in the first three month in Japan, which were only 2255 total cases and just account for `r (covid_19_japan[3,]["cumulative confirmed"]/covid_19_japan[8,]["cumulative confirmed"])*100`% of the total confirmed cases. The first outbreak happened in April of 2020, which reported 12029 cases increased in this month, and the total cases have jumped to 14284 cases. The confirmed cases of April have increased `r ((covid_19_japan[4,]["monthly confirmed"]-covid_19_japan[3,]["cumulative confirmed"])/covid_19_japan[3,]["cumulative confirmed"])*100`% compared with the first three month total confirmed cases. Fortunately, the monthly confirmed cases of May and June all gradually decreased, and th e total confirmed cases have slowly increased. However, May has reported the highest mortality among the eight months. There were 417 death cases in May, and it even three cases higher than that of the first outbreak, which were 414 cases. The reason might because the outbreak in April resulted in a high confirmed cases so that leaded to a highest mortality in May. But, fortunately, the monthly recovered cases in May was 11882, and the cumulative recovered cases have reached to 14342, which accounted for `r (covid_19_japan[5,]["cumulative recovered"]/covid_19_japan[5,]["cumulative confirmed"])*100`% of the cumulative confirmed cases. And the recovery rate of June has reached to `r (covid_19_japan[6,]["cumulative recovered"]/covid_19_japan[6,]["cumulative confirmed"])*100`%. 
+
+However, because of the gradually return to works or the consciousness of defenses for COVID-19 of people may already be worn down. Japan also experienced the same second COVID-19 outbreak like other countries. The monthly confirmed cases of July have recorded at 17619, which increased `r ((covid_19_japan[7,]["monthly confirmed"]-covid_19_japan[6,]["monthly confirmed"])/covid_19_japan[6,]["monthly confirmed"])*100`% over June. Furthermore, August has recorded the highest monthly confirmed cases within eight months, which were 32162 cases. Such high monthly cases has contributed the dramatic increase in cumulative confirmed cases of August which were 68396. And the monthly confirmed rate of August has account for almost a half among the total cases in eight month, which was `r (covid_19_japan[8,]["monthly confirmed"]/covid_19_japan[8,]["cumulative confirmed"])*100`%. Fortunately, there were only 36 death cases and 290 death cases in July and August, respectively. In addition, the recovered cases in July and August were also high, which were 8316 and 31564 cases, respectively. Finally, there are `r (covid_19_japan[8,]["cumulative recovered"]/covid_19_japan[8,]["cumulative confirmed"])*100`% of patients have reported as recovery at the end of August. That should be a good news for Japan. 
+
