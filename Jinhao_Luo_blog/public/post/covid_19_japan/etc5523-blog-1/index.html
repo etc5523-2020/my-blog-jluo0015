@@ -269,9 +269,9 @@
   <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-09-03T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-09-04T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-09-03T13:53:08&#43;00:00">
+    <meta property="article:modified_time" content="2020-09-04T14:40:52&#43;00:00">
   
 
   
@@ -299,8 +299,8 @@
   },
   "headline": "COVID-19 situations of Japan",
   
-  "datePublished": "2020-09-03T00:00:00Z",
-  "dateModified": "2020-09-03T13:53:08Z",
+  "datePublished": "2020-09-04T00:00:00Z",
+  "dateModified": "2020-09-04T14:40:52Z",
   
   "author": {
     "@type": "Person",
@@ -726,7 +726,7 @@
           Last updated on
       
     
-    Sep 3, 2020
+    Sep 4, 2020
   </span>
   
 
@@ -735,7 +735,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 min read
+    5 min read
   </span>
   
 
@@ -773,16 +773,22 @@
     <div class="article-style">
       
 <script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/pymjs/pym.v1.js"></script>
+<script src="/rmarkdown-libs/widgetframe-binding/widgetframe.js"></script>
 
 
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>Although Japan has dense and aging population, it still reported a low cases of COVID-19 infection in the first few months of the COVID-19 outbreak, compared with other countries (akiko). However, according to the latest <a href="https://www.mhlw.go.jp/content/10900000/000666371.pdf">COVID-19 report</a> from Ministry of Health, Labour and Welfare of Japan, Japan has experience the second outbreak of COVID-19 from July, 2020. And it is more serious than the first one. Therefore, this post will focus on the COVID-19 cases of Japan.</p>
+<p><span class="citation">Iwasaki and Grubaugh (2020)</span> indicates that although Japan has dense and aging population, it still reported a low cases of COVID-19 infection in the first few months of the COVID-19 outbreak, compared with other countries. However, according to the latest <a href="https://www.mhlw.go.jp/content/10900000/000666371.pdf">COVID-19 report</a> from Ministry of Health, Labour and Welfare of Japan, Japan has experience the second outbreak of COVID-19 from July, 2020 (<span class="citation">Ministry of Health and Welfare (2020)</span>). And it is more serious than the first one. Therefore, this post will focus on the COVID-19 cases of Japan.</p>
 </div>
 <div id="data-description" class="section level1">
 <h1>Data description</h1>
-<p>For exploring the CPVID-19 situations of Japan, the post has used the COVID-19 data from the package called <strong>coronavirus</strong>. This package is from Github repository owned by Rami Krispin, which could find all information related to this package from <a href="https://github.com/RamiKrispin/coronavirus">Github</a>. By glimpsing this data, there are 175055 observations and 7 variables. Based on the help page of coronavirus package, <span class="citation">Krispin and Byrnes (2020)</span> indicate the variables are:</p>
+<p>For exploring the COVID-19 situations of Japan, the post has used the COVID-19 data from the package called <strong>coronavirus</strong>. This package is from Github repository owned by Rami Krispin, which could find all information related to this package from <a href="https://github.com/RamiKrispin/coronavirus">Github</a>. By glimpsing this data, there are 175055 observations and 7 variables. Based on the help page of coronavirus package, <span class="citation">(<span class="citeproc-not-found" data-reference-id="coronavirus"><strong>???</strong></span>)</span> indicate the variables are in the following table <a href="#tab:variable-table">1</a>:</p>
 <table class="table table-hover table-striped table-condensed" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:variable-table">Table 1: </span>Description of variables in coronavirus data
+</caption>
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -878,11 +884,300 @@ Number of cases on given date
 </table>
 <p>Because this post will focus on the cases of Japan, the <strong>filter</strong> function will be used for filter the data which make the data only include Japan’s cases. Besides, because the types of COVID-19 case are all contained in the same column, the function call <strong>pivot_wider</strong> will be applied to change the position of type as variable rather than value.</p>
 </div>
-<div id="data-story" class="section level1 unnumbered">
+<div id="data-story" class="section level1">
 <h1>Data story</h1>
+<style type="text/css">
+
+.table.table-striped.table-hover, .table thead th {
+  font-size: 5px;
+}
+
+
+</style>
+<table class="table table-striped table-hover" style="font-size: 16px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:summary-table">Table 2: </span>Summary table of COVID-19 cases in Japan
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+year
+</th>
+<th style="text-align:right;">
+month
+</th>
+<th style="text-align:right;">
+monthly confirmed
+</th>
+<th style="text-align:right;">
+monthly death
+</th>
+<th style="text-align:right;">
+monthly recovered
+</th>
+<th style="text-align:right;">
+cumulative confirmed
+</th>
+<th style="text-align:right;">
+cumulative death
+</th>
+<th style="text-align:right;">
+cumulative recovered
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;font-weight: bold;">
+15
+</td>
+<td style="text-align:right;font-weight: bold;">
+0
+</td>
+<td style="text-align:right;font-weight: bold;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+230
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;font-weight: bold;">
+245
+</td>
+<td style="text-align:right;font-weight: bold;">
+6
+</td>
+<td style="text-align:right;font-weight: bold;">
+32
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+2010
+</td>
+<td style="text-align:right;">
+61
+</td>
+<td style="text-align:right;">
+392
+</td>
+<td style="text-align:right;font-weight: bold;">
+2255
+</td>
+<td style="text-align:right;font-weight: bold;">
+67
+</td>
+<td style="text-align:right;font-weight: bold;">
+424
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+12029
+</td>
+<td style="text-align:right;">
+414
+</td>
+<td style="text-align:right;">
+2036
+</td>
+<td style="text-align:right;font-weight: bold;">
+14284
+</td>
+<td style="text-align:right;font-weight: bold;">
+481
+</td>
+<td style="text-align:right;font-weight: bold;">
+2460
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+2467
+</td>
+<td style="text-align:right;">
+417
+</td>
+<td style="text-align:right;">
+11882
+</td>
+<td style="text-align:right;font-weight: bold;">
+16751
+</td>
+<td style="text-align:right;font-weight: bold;">
+898
+</td>
+<td style="text-align:right;font-weight: bold;">
+14342
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+1864
+</td>
+<td style="text-align:right;">
+74
+</td>
+<td style="text-align:right;">
+2116
+</td>
+<td style="text-align:right;font-weight: bold;">
+18615
+</td>
+<td style="text-align:right;font-weight: bold;">
+972
+</td>
+<td style="text-align:right;font-weight: bold;">
+16458
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+17619
+</td>
+<td style="text-align:right;">
+36
+</td>
+<td style="text-align:right;">
+8316
+</td>
+<td style="text-align:right;font-weight: bold;">
+36234
+</td>
+<td style="text-align:right;font-weight: bold;">
+1008
+</td>
+<td style="text-align:right;font-weight: bold;">
+24774
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2020
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+32162
+</td>
+<td style="text-align:right;">
+290
+</td>
+<td style="text-align:right;">
+31564
+</td>
+<td style="text-align:right;font-weight: bold;">
+68396
+</td>
+<td style="text-align:right;font-weight: bold;">
+1298
+</td>
+<td style="text-align:right;font-weight: bold;">
+56338
+</td>
+</tr>
+</tbody>
+</table>
+<p>In order to explore the COVID-19 situations of Japan and identify the second outbreak situation, a summary table has been generated to support the following explanation. Table <a href="#tab:summary-table">2</a> indicates the monthly cases and cumulative cases of Japan from the first patient has been confirmed to the end of August, 2020. Based on table <a href="#tab:summary-table">2</a>, there were little cases in the first three month in Japan, which were only 2255 total cases and just account for 3.3% of the total confirmed cases. The first outbreak happened in April of 2020, which reported 12029 cases increased in this month, and the total cases have jumped to 14284 cases. The confirmed cases of April have increased 433.44% compared with the first three month total confirmed cases. Fortunately, the monthly confirmed cases of May and June all gradually decreased, and th e total confirmed cases have slowly increased. However, May has reported the highest mortality among the eight months. There were 417 death cases in May, and it even three cases higher than that of the first outbreak, which were 414 cases. The reason might because the outbreak in April resulted in a high confirmed cases so that leaded to a highest mortality in May. But, fortunately, the monthly recovered cases in May was 11882, and the cumulative recovered cases have reached to 14342, which accounted for 85.62% of the cumulative confirmed cases. And the recovery rate of June has reached to 88.41%.</p>
+<p>However, because of the gradually return to works or the consciousness of defenses for COVID-19 of people may already be worn down. Japan also experienced the same second COVID-19 outbreak like other countries. The monthly confirmed cases of July have recorded at 17619, which increased 845.23% over June. Furthermore, August has recorded the highest monthly confirmed cases within eight months, which were 32162 cases. Such high monthly cases has contributed the dramatic increase in cumulative confirmed cases of August which were 68396. And the monthly confirmed rate of August has account for almost a half among the total cases in eight month, which was 47.02%. Fortunately, there were only 36 death cases and 290 death cases in July and August, respectively. In addition, the recovered cases in July and August were also high, which were 8316 and 31564 cases, respectively. Finally, there are 82.37% of patients have reported as recovery at the end of August. That should be a good news for Japan.</p>
+</div>
+<div id="interactive-table" class="section level1">
+<h1>Interactive table</h1>
+<p>For helping the reader to better realise the COVID-19 situation of Japan. A interactive table has been created for reader to explore the data of COVID-19 in Japan. Please refer to the following Figure <a href="#fig:DT-table">1</a>.</p>
+<div class="figure"><span id="fig:DT-table"></span>
+<div id="htmlwidget-1" style="width:100%;height:600px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"url":"/post/COVID_19_JAPAN/COVID-19-Japan_files/figure-html//widgets/widget_DT-table.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 1: The interactive table of COVID-19 situations in Japan
+</p>
+</div>
+</div>
+<div id="conclusion" class="section level1">
+<h1>Conclusion</h1>
+<p>Many countries have experienced the second COVID-19 outbreak nowadays, as well as Japan. Everyone still needs to keep their consciousness of defense this pandemic. Furthermore, hoping the novel coronavirus vaccine will come out as soon as possible, as well as there are no increase trend of confirmed cases in Japan.</p>
+</div>
+<div id="acknowledgement" class="section level1">
+<h1>Acknowledgement</h1>
+<p>For the reproducibility of this post, You can find the relevant information of <strong>coronavirus</strong> package in this <a href="https://github.com/RamiKrispin/coronavirus">Github repository</a>. In addition, the versions of R and packages which used in this post would be listed in following.</p>
+<p>The programming language used to write the data story of COVID-19 in Japan is R (4.0.2) <span class="citation">(R Core Team 2020)</span>. Following packages has been included in our scripts:</p>
+<ul>
+<li>package coronavirus (0.3.0.9000) <span class="citation">(<span class="citeproc-not-found" data-reference-id="coronavirus"><strong>???</strong></span>)</span></li>
+<li>package tidyverse (1.3.0) <span class="citation">(<span class="citeproc-not-found" data-reference-id="tidyverse"><strong>???</strong></span>)</span>,</li>
+<li>package kableExtra (1.1.0) <span class="citation">(<span class="citeproc-not-found" data-reference-id="kableExtra"><strong>???</strong></span>)</span>,</li>
+<li>package tibble (3.0.3) <span class="citation">(<span class="citeproc-not-found" data-reference-id="tibble"><strong>???</strong></span>)</span>,</li>
+<li>package lubridate (1.7.9) <span class="citation">(<span class="citeproc-not-found" data-reference-id="lubridate"><strong>???</strong></span>)</span>,</li>
+<li>package widgetframe (0.3.1) <span class="citation">(<span class="citeproc-not-found" data-reference-id="widgetframe"><strong>???</strong></span>)</span>,</li>
+<li>package DT (0.15) <span class="citation">(<span class="citeproc-not-found" data-reference-id="DT"><strong>???</strong></span>)</span>,</li>
+<li>package htmltools (0.5.0) <span class="citation">(<span class="citeproc-not-found" data-reference-id="htmltools"><strong>???</strong></span>)</span>,</li>
+</ul>
 <div id="refs" class="references">
-<div id="ref-COVID-19">
-<p>Krispin, Rami, and Jarrett Byrnes. 2020. <em>Coronavirus: The 2019 Novel Coronavirus Covid-19 (2019-nCoV) Dataset</em>. <a href="https://github.com/RamiKrispin/coronavirus">https://github.com/RamiKrispin/coronavirus</a>.</p>
+<div id="ref-iwasaki2020does">
+<p>Iwasaki, Akiko, and Nathan D Grubaugh. 2020. “Why Does Japan Have so Few Cases of Covid-19?” <em>EMBO Molecular Medicine</em> 12 (5): e12481.</p>
+</div>
+<div id="ref-Japan">
+<p>Ministry of Health, Labour, and Japan Welfare. 2020. “Changes in the Number of Individuals Requiring Hospital Treatment, Critically Ill Individuals, and Newly Reported Cases Etc.” <a href="https://www.mhlw.go.jp/content/10900000/000666371.pdf">https://www.mhlw.go.jp/content/10900000/000666371.pdf</a>.</p>
+</div>
+<div id="ref-R">
+<p>R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
 </div>
 </div>
 </div>
