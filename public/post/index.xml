@@ -5,12 +5,80 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Jinhao Luo</copyright><lastBuildDate>Fri, 18 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2020 Jinhao Luo</copyright><lastBuildDate>Fri, 16 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>The Self-reflection of Shiny App</title>
+      <link>/post/shiny_app_self_reflection/etc5523-shiny-app-self-reflection/</link>
+      <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/post/shiny_app_self_reflection/etc5523-shiny-app-self-reflection/</guid>
+      <description>
+
+
+&lt;style&gt;
+body{
+text-align: justify
+}
+h1 {
+text-align: left
+}
+h2{
+text-align: left
+}
+&lt;/style&gt;
+&lt;div id=&#34;introduction-and-motivation&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Introduction and motivation&lt;/h1&gt;
+&lt;p&gt;The first two posts have introduced the basic information of COVID-19 in Japan. Because the analytic directions of the posts were subjective, the figures and tables are determined and constant, which means they are generated based on the directions of the analysis. This type of table and figure might reduce the engagement of readers and cannot provide sufficient access for readers to further exploring the data. Therefore, a Shiny app of COVID-19 has been created to provide opportunities for readers to explore the situation of COVID-19 in their interested countries.&lt;/p&gt;
+&lt;p&gt;There are three countries available in the app currently, which are Japan, Australia, and the US. Meanwhile, the &lt;a href=&#34;https://jinhao-luo.shinyapps.io/shiny-assessment-jluo0015/&#34;&gt;Shiny app&lt;/a&gt; contains three main sections. The first section is &lt;strong&gt;about&lt;/strong&gt;, which introduces the basic information, like author and student ID, and the purpose of the app. The second section is &lt;strong&gt;app&lt;/strong&gt;, which contains three subsections of &lt;strong&gt;explanation&lt;/strong&gt;, &lt;strong&gt;figure&lt;/strong&gt;, and &lt;strong&gt;table&lt;/strong&gt;. The subsection of &lt;strong&gt;explanation&lt;/strong&gt; provides an overview of the structure of the app, which might help users understand the functions of each section and get familiar with the app. Meanwhile, it provides the instructions of subsections of &lt;strong&gt;figure&lt;/strong&gt; and &lt;strong&gt;table&lt;/strong&gt;. The subsections of &lt;strong&gt;figure&lt;/strong&gt; and &lt;strong&gt;table&lt;/strong&gt; provide the chances for users to explore the information of COVID-19. Users could select the elements they are interested in, and the corresponding figures or tables would be generated based on the selections of users.&lt;/p&gt;
+&lt;p&gt;In the subsection of &lt;strong&gt;figure&lt;/strong&gt;, users could select the country, the scope of months, or a specific month they want to observe. The top figure would display the total trend of a selected country in the selected months. Three lines would be shown in the figure, which represents the total confirmed cases, total death, and total recovered cases, respectively. The default range of months would be from January to October 2020. While the bottom figure shows the fluctuation of those three cases within a month. In the subsection of &lt;strong&gt;table&lt;/strong&gt;, users could create a table by selecting a country and the frequency of the cases, which is monthly or daily. In addition, users could decide the level of the data, which means users could choose country-based or province-based data for creating the table.&lt;/p&gt;
+&lt;p&gt;The last section of &lt;strong&gt;citation&lt;/strong&gt; lists the data source, packages, and references used in the Shiny app, which provide the chance of reproducibility for users who want to reproduce or update the app.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;self-review&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Self Review&lt;/h1&gt;
+&lt;div id=&#34;the-good-points-of-the-app&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The good points of the app&lt;/h2&gt;
+&lt;p&gt;Firstly, the paragraphs of structure in the subsection of &lt;strong&gt;explanation&lt;/strong&gt; should not be seen as wordy because it provides users a better understand of components of the app and help them get familiar with the app.&lt;/p&gt;
+&lt;p&gt;Secondly, the app provides multiple choices for users to further explore the situation of COVID-19. The subsection of &lt;strong&gt;figure&lt;/strong&gt; allows users to select either a range of months or a specific month, which not only helps users gain an overview of the general trend of COVID-19 but also provides a chance to users to investigate the situation within a specific month. Meanwhile, users could choose a month by clicking the point in the general trend figure directly, which would be more convenient. In the subsection of &lt;strong&gt;table&lt;/strong&gt;, the app allows users to observe either the cases of a country or a province in the frequency of monthly or daily, which would help users analyse COVID-19 comprehensively. Meanwhile, users could filter or search the information in the table.&lt;/p&gt;
+&lt;p&gt;Besides, the format of the app is unified. In the interactive subsection, all the selection bars are placed on the left side of the page, while the respondent figures or table are placed on the right-hand side. Besides, the format of that two figures is also consistent, like the same title size, and the same colour of the types of COVID-19 cases in both figures.&lt;/p&gt;
+&lt;p&gt;Furthermore, the title and the explanation of each figure or table could be altered automatically based on the choices of users. That could be helpful for users to understand the contents of each figure and table by the title and the explanations because the title and explanations are consistent with the choices of users.&lt;/p&gt;
+&lt;p&gt;At last, there are two buttons below each figure and table, which are guide and output. The guide button shows the steps of creating the corresponding figure or table, which would be helpful for users to create the figure or table easily. While the output button explains the components of the figures and table, as well as their contents.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-points-that-need-improvements&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The points that need improvements&lt;/h2&gt;
+&lt;p&gt;Firstly, a picture showing the structure of the app would be inserted in the subsection of &lt;strong&gt;explanation&lt;/strong&gt; to improve the illustration, rather than the literal statements only. Secondly, the size of characters in the selection bars could be increased to make them clearer. Thirdly, the in-text citations should be added in any explanation parts to help users gain associations with the supporting materials, included referencing the figure, table, section, and the data source.&lt;/p&gt;
+&lt;p&gt;While, an important point that needs to be improved is the illustration of each diagram and table, as what is available is inadequate. A paragraph explaining the trends and variations in the chart and the contents of the table should be added, which would help to explain the outputs of the figures and table.&lt;/p&gt;
+&lt;p&gt;At last, the original dataset of this app should be enlarged, which should contain more data from countries.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;some-things-that-would-like-to-add&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Some things that would like to add&lt;/h2&gt;
+&lt;p&gt;Because the subsection of &lt;strong&gt;figure&lt;/strong&gt; is used to display the trend of COVID-19 by diagrams. By considering how to inspire users to select a country or provide users a more intuitive sense of the general situation, a map of the world should be placed on the sidebar panel. This map would show the level of confirmed cases by colours and highlight the included countries of the dataset only. Meanwhile, the map would be a click plotly and users could choose a country by clicking the country on the map directly.&lt;/p&gt;
+&lt;p&gt;Besides, the subsection of &lt;strong&gt;table&lt;/strong&gt; provides a chance for users to investigate the situation of a province in a country. A map of the country would be added in the sidebar panel to show the total confirmed cases of each province in a country by colours, which would also provide an intuitive sense of the COVID-19 situation. The map would popup when users select province-based data, and users could click a province in the map to get the corresponding table.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-limitations-that-prevent-from-adding-new-things&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The limitations that prevent from adding new things&lt;/h2&gt;
+&lt;p&gt;Although some new things are discussed, they did not be added to the app yet due to the limitation in data. Firstly, the original dataset is incomplete. Some data of provinces are missing in the dataset, and not all countries have provincial data. Secondly, the limitation of latitude and longitude of all provinces would also make the map of a country absent. Besides, adding the in-text citations in the Shiny app is not finished yet due to limitations of the technology of the creator, and it would be solved later.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;acknowledgement&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Acknowledgement&lt;/h1&gt;
+&lt;p&gt;This Shiny app has been published in the service of ShinyApps.io, you could check the app &lt;a href=&#34;https://jinhao-luo.shinyapps.io/shiny-assessment-jluo0015/&#34;&gt;here&lt;/a&gt;. (The app might be sleeping because of the limitation of active time of the free account, therefore you might not run the app.)&lt;/p&gt;
+&lt;p&gt;The programming language used to write the self reflection is R (4.0.2) &lt;span class=&#34;citation&#34;&gt;(R Core Team 2020)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-R&#34;&gt;
+&lt;p&gt;R Core Team. 2020. &lt;em&gt;R: A Language and Environment for Statistical Computing&lt;/em&gt;. Vienna, Austria: R Foundation for Statistical Computing. &lt;a href=&#34;https://www.R-project.org/&#34;&gt;https://www.R-project.org/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>COVID-19 situations of Japan post 2</title>
