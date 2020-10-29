@@ -2,7 +2,7 @@
 title: The Peer Review of Another R Package
 author: Jinhao Luo
 date: "`r Sys.Date()`"
-slug: etc5523-shiny-app-self-reflection
+slug: etc5523-package-peer-review
 categories: []
 tags: []
 subtitle: The peer review of another classmate's R package called covideu
