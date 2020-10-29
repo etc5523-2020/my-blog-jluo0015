@@ -1,0 +1,112 @@
+---
+title: The Peer Review of Another R Package
+author: Jinhao Luo
+date: "`r Sys.Date()`"
+slug: etc5523-package-peer-review
+categories: []
+tags: []
+subtitle: The peer review of another classmate's R package called covideu
+summary: This post is used to review the R package of another classmate to provide some useful suggestions and highlight some points I am interested. 
+authors: []
+lastmod: "`r Sys.time()`"
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+bibliography: references.bib
+biblio-style: apa
+output: 
+  bookdown::html_document2:
+    citation_package: biblatex
+---
+
+<style>
+body{
+text-align: justify
+}
+h1 {
+text-align: left
+}
+h2{
+text-align: left
+}
+</style>
+
+# An overview of the package
+
+This post is used to execute the peer review of another R package called **covideu** which created by the author of **Joyce Lee**. According to the _README_ and _vignette_ files, the purpose of the package is providing the dataset used in the shiny app, as well as the coding processes within the app.R of the shiny app. Therefore, the shiny app of _COVID-19 in EU_ has been decomposed and becomes several elements in the package. There are four functions and four package data in the package. The package data are *eutable_draft*, *owid*, *owid_eu* and *owid_eu_long*, respectively. While those four functions included *draw_plot()*, *launch_app()*, *ic()* and *select1country()*. Meanwhile, the package also contains the vignette which introduces how to use the function to run the app, as well as the introduction and guidelines of the app. Besides, there is a pkgdown website of the package which includes the documentation for the package, like the instructions and overview of the package, the documentation of the functions and package data, and the vignette site. Furthermore, the documentation of the functions and data could be found on the help page. 
+
+# Assumption about this package
+
+By reading through the contents in the _pkgdown website_, I supposed this package could allow me to explore the data which used in the app, as well as provide me with the functions which are similar the coding processes in the app. Meanwhile, the documentation of data and functions also led me to assume that the package data would provide coronavirus information of the European Union and the world, while the functions of the package would help launch the app, generate a plot and the tag of country, as well as select a country.
+By trying the provided commands in the package, I found that the command of generating that four package data could run successfully, and the results are as expected. In addition, the *launch_app* function also meets my expectation which is running the app successfully. Meanwhile, the function of *ic()* generates the format of the tag$style(HTML()) for the targeted country, which is also as expected. 
+
+Another two functions, however, might not satisfy my assumption. Even though the function of *draw_plot()* could create the plot successfully. The bar chart just shows two pillars of the same height without suitable values of both y-axis and x-axis. Because I assumed that it would be a time-series plot which displays the daily cases of the inputted country, meanwhile, the x-axis would show the date and the y-axis would show the value of cases. But the fact that the result is not what I expected. Besides, I suppose that the *select1country* function would allow users to select one country and return the relevant information of that country. However, because of the lack of particular documentation of this function, I cannot run this function successful. By checking the code in the R file, I found that the author creates a UI of shiny in this function. Indeed, this function generates a selection bar and be shown on the page of _README.md_. However, this is not I expected. 
+
+# Improvements
+
+## Improvements for the code
+
+Overall, the author did well in the coding part. However, two parts could be improved. The first one is in the _r2.R_ file which is the R file of *draw_plot* function. Based on the documentation and return (the return I got is only two pillars when I inputted one country name and I cannot input multiple names) of that function, I think the argument _x_ should be an inputted element to select one country that a user wants to observe. Therefore, there should be a step before _ggplot2::ggplot()_ to filter out the country rather than putting the country name as the x-axis. Because the argument of _x_ has been used to filter the country, we need a new element to be as the x-axis. By checking the dataset of _owid_eu_long_ (the suggested data in the documentation), I will suggest that put the variable of _date_ as the x-axis, which could help to create a plot to display the daily cases by date. Besides, make the argument of _fill_ as an optional argument which could not only allow users to create the daily-cases plot but also allow users to plot the total confirmed cases and total death cases. This could achieve by setting _fill = ""_ or _fill = NULL_ in _function()_. At the same time, the documentation of the *draw_plot* function should be updated to increase the descriptions of the arguments. 
+
+Another improvement that is suggested is because of my personal preference which is trying to break the long-line argument input into several short lines. For example, in the *owid_eu.R* file, the author wanted to select the countries in the EU (on line 5). However, the author put all the name of countries in one line, which might be hard for users to read the whole code. Actually, the author could try to break it into several short lines, that is putting each name of the country in one line. The author could also try to do the same thing on line 6.
+
+## Improvements for the shiny app
+
+The author did well in the shiny app. However, there are several points I considered could be improved. Firstly, the colour of the tags of _About_ and _Main_ is similar to the background colour, try to change the colour which could highlight these two tags. Secondly, try to clear the instructions of how to use the sidebar panel in the shiny app, put more details in the guidelines would help users easier to use. Besides, the author could describe the outputs in more details. Thirdly, try to add the selected date in the title, which might make it clearer. The last one is removing the sidebar panel in the  _About_ section because it is unnecessary in that section. 
+
+## Improvements for the documentations
+
+In my opinion, the documentation of data is good. But adding the description of the variables within each dataset in the documentation would be better. The documentation of functions, however, are not sufficient enough for me to get started, except for the documentation of the _launch_app()_. Trying to explain the return of each function might guide the expectation of users for results and provide a better understanding to users for the results. Meanwhile, the author also needs to provide the examples of each function, which could help users to understand how to use the function, as well as the arguments. At last, try to provide more details in the part of the argument of documentations to tell users the required element and format of each argument in the function.  
+
+# The things I have learned from the reviewing
+
+In my opinion, by reviewing another R package could help me realise some parts I missed or did not do well in my package. For example, I found that I forgot to put the R CMD check status link to into the README file, therefore, the check result would not show on the README.md in Github. Also, the peer review helps me to learn something new or gain some new ideas from others. By checking the shiny app, I found that users could slide the plot to the left or right to control the number of objects shown in the plot. That would be a convenient way to compare the different number of objects without further specify the number of objects. And I might use this method in my future works. Furthermore, reviewing the package could also help me realise the important elements in the documentation of the package. Like the parts of arguments, value and examples, or the description of variables in the data. These elements could all help users understand the function or data in the package, as well as a guild the user to utilise them. In conclusion, peer review is a helpful process for both authors or reviews, it could help each other to realise the mistakes and learn some new ideas. 
+
+# Acknowledgement
+
+The repository of this package could be found in this [Github link](https://github.com/etc5523-2020/r-package-assessment-jlee0179). Or you could use the command _devtools::install_github("etc5523-2020/r-package-assessment-jlee0179")_ to install the package if you want to investigate it. 
+
+
+# Appendix
+
+## Package Review
+
+*Please check off boxes as applicable, and elaborate in comments below.*
+
+### Documentation
+
+The package includes all the following forms of documentation:
+
+- [x] **Installation instructions:** for the package is found in README
+
+- **Comment**: Author clearly explains how to install the package and provides the relevant code 
+
+- [x] **Vignette(s)** demonstrating major functionality that runs successfully locally
+
+- **Comment**: The vignette could be run successfully locally, and the vignette demonstrates the documentation of the major functionality and the package data.
+
+- [x] **Function Documentation:** for all exported functions in R help
+
+- **Comment**: The function documentation of all exported functions and data could be found in the R help page. However, in my opinion, some of the documentation is insufficient to guide users to use the function.
+
+- [ ] **Examples** for all exported functions in R Help that run successfully locally
+
+- **Comment**: Cannot find any examples in the R help page of all exported function and package data.
+
+
+### Functionality
+
+- [x] **Installation:** Installation succeeds as documented.
+
+- **Comment**: Following the instruction of installation, I can install the package successfully.
+
+- [ ] **Functionality:** Any functional claims of the software been confirmed.
+
+- **Comment**: Not all the functional claims of the software could be confirmed. Because some of the documentation of functionality are inadequate. Thus, some of the functions are unclear to how to use and this might be a reason that cannot confirm the claims. But the function of *select1country()* cannot help to select one country in R studio. In addition, the function of *draw_plot()* only return same height bar plot instead of the plot of the daily case. The function of *ic()* also cannot return what it describes as. However, in the README, the *select1country()* generate a selection bar and indeed enable the selection of a country. While the *ic()* function also indeed returns the format of tag$style(HTML()). Besides, the rest of the functional claims could be confirmed. 
+
+- [ ] **Automated tests:** Unit tests cover essential functions of the package and a reasonable range of inputs and conditions. All tests pass on the local machine.
+
+- **Comment**: There are no unit tests included in the package.
