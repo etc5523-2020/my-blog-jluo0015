@@ -109,4 +109,4 @@ The package includes all the following forms of documentation:
 
 - [ ] **Automated tests:** Unit tests cover essential functions of the package and a reasonable range of inputs and conditions. All tests pass on the local machine.
 
-- **Comment**: There are no unit tests included in the package.
+- **Comment**: There are no unit tests included in the package. 

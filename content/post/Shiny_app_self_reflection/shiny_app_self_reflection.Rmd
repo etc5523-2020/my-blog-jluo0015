@@ -34,7 +34,7 @@ text-align: left
 }
 </style>
 
-# Introduction and motivation
+# Introduction and motivation  
 
 The first two posts have introduced the basic information of COVID-19 in Japan. Because the analytic directions of the posts were subjective, the figures and tables are determined and constant, which means they are generated based on the directions of the analysis. This type of table and figure might reduce the engagement of readers and cannot provide sufficient access for readers to further exploring the data. Therefore, a Shiny app of COVID-19 has been created to provide opportunities for readers to explore the situation of COVID-19 in their interested countries. 
 
