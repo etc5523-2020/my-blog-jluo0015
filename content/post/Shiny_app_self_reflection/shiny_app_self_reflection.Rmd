@@ -12,7 +12,7 @@ lastmod: "`r Sys.time()`"
 featured: no
 image:
   caption: ''
-  focal_point: ''
+  focal_point: '' 
   preview_only: no
 projects: []
 bibliography: references.bib
@@ -83,7 +83,7 @@ Although some new things are discussed, they did not be added to the app yet due
 
 This Shiny app has been published in the service of ShinyApps.io, you could check the app [here]( https://jinhao-luo.shinyapps.io/shiny-assessment-jluo0015/). (The app might be sleeping because of the limitation of active time of the free account, therefore you might not run the app.)
 
-The programming language used to write the self reflection is R (4.0.2) [@R]. 
+The programming language used to write the self reflection is R (4.0.2) [@R]..
 
 
 # References
