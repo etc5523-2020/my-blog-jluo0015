@@ -239,6 +239,6 @@ The programming language used to write the data stories of COVID-19 in Japan is 
 - package widgetframe (0.3.1) [@widgetframe],
 - package htmltools (0.5.0) [@htmltools],
 - package coronavirus (0.3.0) [@coronavirus],
-- package nCov2019 (0.3.6) [@nCov2019]
+- package nCov2019 (0.3.6) [@nCov2019].
 
 # References
